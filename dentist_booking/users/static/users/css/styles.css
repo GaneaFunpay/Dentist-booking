@@ -1,0 +1,15 @@
+body {
+    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.input + div {
+    display: none;
+    position: relative;
+    top: -30px;
+    left: 200px;
+}
+
+.input:focus + div {
+        display: block;
+}
