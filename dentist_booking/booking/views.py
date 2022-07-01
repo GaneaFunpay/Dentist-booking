@@ -13,7 +13,7 @@ from booking.tasks import notify_dentist
 
 
 class IndexView(View):
-    template_name = 'booking/index.html'
+    template_name = 'index.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
