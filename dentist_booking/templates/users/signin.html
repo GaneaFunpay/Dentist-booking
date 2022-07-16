@@ -9,7 +9,6 @@
                         <h2 class="text-uppercase text-center mb-5">Welcome back!</h2>
                         <form method="post">
                             {% csrf_token %}
-
                             {% for field in form %}
                             <div class="form-outline mb-4">
                                 {{ field }}
@@ -39,7 +38,6 @@
                                 </a>
                             </p>
                         </form>
-
                     </div>
                 </div>
             </div>

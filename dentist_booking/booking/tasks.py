@@ -5,8 +5,6 @@ from django.core.mail import send_mail
 
 @background()
 def notify_dentist(client, dentist):
-    print(client)
-    print(dentist)
     send_mail(
         'One day before notify',
         f'Remind you that you have an appointment with {client}, at ',

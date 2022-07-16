@@ -47,7 +47,8 @@ class BookingView(View):
                 client=f'{appointment.client.get_full_name()}',
                 dentist=f'{appointment.dentist.email}',
                 verbose_name="notify_dentist",
-                schedule=appointment.schedule.start_time - datetime.timedelta(days=1))
+                schedule=appointment.schedule.start_time - datetime.timedelta(days=1)
+            )
 
             return render(request, self.template_name, {'form': self.form_class, 'success': True})
         except Exception as e:

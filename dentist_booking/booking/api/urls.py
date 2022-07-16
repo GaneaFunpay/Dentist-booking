@@ -1,8 +1,9 @@
-from django.contrib.auth import logout
 from django.urls import path
 
 from booking.views import IndexView, BookingView, get_schedule
 
+
+app_name = 'booking'
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('book/', BookingView.as_view(), name='booking'),

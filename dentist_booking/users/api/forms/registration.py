@@ -1,10 +1,10 @@
+from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from users.models import User
 
 
-class SignUpForm(UserCreationForm):
+class RegistrationForm(UserCreationForm):
     first_name = forms.CharField(
         label='First name',
         max_length=30,
@@ -55,17 +55,3 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'phone', 'password1', 'password2')
-
-
-class SignInForm(AuthenticationForm):
-    username = forms.CharField(
-        label='Username',
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'})
-    )
-    password = forms.CharField(
-        label='Password',
-        required=True,
-        widget=forms.PasswordInput(attrs={'class': 'form-control form-control-lg'})
-    )
-
