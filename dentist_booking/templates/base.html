@@ -27,10 +27,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'booking:index' %}">Home <span class="sr-only">Aboba</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'booking' %}">Booking</a>
+                <a class="nav-link" href="{% url 'booking:booking' %}">Booking</a>
             </li>
             {% if request.user.is_staff %}
             <li class="nav-item dropdown">
@@ -50,12 +50,12 @@
         <form class="form-inline my-2 my-lg-0">
             {% if request.user.is_authenticated %}
             <span>Hi, {{ request.user.first_name }}!</span>
-            <a href="{% url 'logout' %}" class="btn btn-light">Log out
+            <a href="{% url 'users:logout' %}" class="btn btn-light">Log out
                 <span class="bi bi-box-arrow-right"></span>
             </a>
             {% else %}
-            <a class="btn btn-light" href="{% url 'signup' %}">Sign up</a> /
-            <a class="btn btn-light" href="{% url 'signin' %}">Login</a>
+            <a class="btn btn-light" href="{% url 'users:signup' %}">Sign up</a> /
+            <a class="btn btn-light" href="{% url 'users:signin' %}">Login</a>
             {% endif %}
         </form>
     </div>

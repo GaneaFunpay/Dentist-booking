@@ -17,7 +17,7 @@ class SignUpView(View):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('index')
+            return redirect('booking:index')
         form = self.form_class()
         return render(request, self.template_name, {'form': form})
 
