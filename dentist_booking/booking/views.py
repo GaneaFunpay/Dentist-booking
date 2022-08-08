@@ -45,7 +45,7 @@ class BookingView(View):
             Schedule.objects.filter(id=data.get('schedule_id')).update(status='occupied')
             notify_dentist(
                 client=f'{appointment.client.get_full_name()}',
-                dentist=f'{appointment.dentist.email}',
+                dentist_email=f'{appointment.dentist.email}',
                 verbose_name="notify_dentist",
                 schedule=appointment.schedule.start_time - datetime.timedelta(days=1)
             )
