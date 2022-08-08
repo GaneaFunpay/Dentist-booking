@@ -7,8 +7,10 @@ services:
     ports:
       - 8000:8000
     image: app:django
-    container_name: django_container
-    command: python3 manage.py runserver 0.0.0.0:8000
+    container_name: booking_app
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
+    depends_on:
+      - db
   db:
     image: postgres
     volumes:
@@ -18,3 +20,21 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     container_name: postgres_db
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+
+  celery:
+    restart: always
+    build:
+      context: .
+    command:
+      - celery -A dentist_booking worker -l DEBUG
+    volumes:
+      - ./dentist_booking:/django
+    container_name: celery
+    depends_on:
+      - db
+      - redis
+      - app
