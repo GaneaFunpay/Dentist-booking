@@ -4,6 +4,6 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /django
 
-COPY requirements.txt requirements.txt
+COPY ./ .
 
 RUN pip install --upgrade pip && pip3 install -r requirements.txt

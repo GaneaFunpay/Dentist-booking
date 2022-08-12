@@ -1,5 +1,5 @@
 asgiref==3.5.2
-celery>=5.2.7
+celery==5.2.7
 defusedxml==0.7.1
 diff-match-patch==20200713
 Django==3.2
@@ -16,7 +16,7 @@ phonenumbers==8.12.50
 psycopg2-binary==2.9.3
 pytz==2022.1
 PyYAML==6.0
-redis>=4.3.4
+redis==4.3.4
 six==1.16.0
 sqlparse==0.4.2
 tablib==3.2.1

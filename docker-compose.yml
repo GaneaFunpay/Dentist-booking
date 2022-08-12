@@ -1,13 +1,15 @@
 version: "3.7"
 services:
   app:
-    build: .
+    container_name: booking_app
+    build: dentist_booking/
     volumes:
       - ./dentist_booking:/django
     ports:
       - 8000:8000
     image: app:django
-    container_name: booking_app
+    env_file:
+      - docker_envs/django.env
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
@@ -15,21 +17,22 @@ services:
   db:
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - pg_data:/var/lib/postgresql/data:rw
+    env_file:
+      - docker_envs/postgres.env
     container_name: postgres_db
 
   redis:
     image: redis:alpine
+    restart: always
+    volumes:
+      - redis_data:/data:rwe
     container_name: redis
 
   celery:
     restart: always
     build:
-      context: .
+      context: dentist_booking/
     command: celery -A dentist_booking worker -l DEBUG
     volumes:
       - ./dentist_booking:/django
@@ -37,3 +40,7 @@ services:
     depends_on:
       - db
       - redis
+
+volumes:
+  pg_data: {}
+  redis_data: {}
