@@ -1,1 +1,1 @@
-web: gunicorn dentist_booking/dentist_booking.wsgi
+web: gunicorn --chdir dentist_booking dentist_booking.wsgi
