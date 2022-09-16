@@ -88,13 +88,24 @@ WSGI_APPLICATION = 'dentist_booking.wsgi.application'
 #     }
 # }
 
-DATABASES = {
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'db',
+#         'POST': 5432
+#     }
+# }
+
+ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'NAME': 'd9i8u52mauriav',
+        'USER': 'hoxvzvzdfbhvyy',
+        'PASSWORD': '666cf4d4a2f9f3022df91ef4b69967914dce3aaf2bfb37d956f7fef659eb800e',
+        'HOST': 'ec2-34-241-90-235.eu-west-1.compute.amazonaws.com',
         'POST': 5432
     }
 }
