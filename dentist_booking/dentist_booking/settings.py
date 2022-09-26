@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-2jwkg4z45bk-9sy#1q4wo@!3z0mg2da2n-=-ai_b)l55sng$wl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ganea-dentist-booking.herokuapp.com'
+]
 
 
 # Application definition
