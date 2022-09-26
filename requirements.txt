@@ -9,6 +9,7 @@ django-compat==1.0.15
 django-import-export==2.8.0
 django-phonenumber-field==6.3.0
 et-xmlfile==1.1.0
+gunicorn==19.0.0
 MarkupPy==1.14
 odfpy==1.4.1
 openpyxl==3.0.10
