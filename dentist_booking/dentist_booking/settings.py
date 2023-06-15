@@ -29,6 +29,7 @@ SECRET_KEY = 'django-insecure-2jwkg4z45bk-9sy#1q4wo@!3z0mg2da2n-=-ai_b)l55sng$wl
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
     'ganea-dentist-booking.herokuapp.com'
 ]
 
@@ -86,12 +87,12 @@ WSGI_APPLICATION = 'dentist_booking.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -104,16 +105,16 @@ WSGI_APPLICATION = 'dentist_booking.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9i8u52mauriav',
-        'USER': 'hoxvzvzdfbhvyy',
-        'PASSWORD': '666cf4d4a2f9f3022df91ef4b69967914dce3aaf2bfb37d956f7fef659eb800e',
-        'HOST': 'ec2-34-241-90-235.eu-west-1.compute.amazonaws.com',
-        'POST': 5432
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd9i8u52mauriav',
+#         'USER': 'hoxvzvzdfbhvyy',
+#         'PASSWORD': '666cf4d4a2f9f3022df91ef4b69967914dce3aaf2bfb37d956f7fef659eb800e',
+#         'HOST': 'ec2-34-241-90-235.eu-west-1.compute.amazonaws.com',
+#         'POST': 5432
+#     }
+# }
 
 
 # Password validation

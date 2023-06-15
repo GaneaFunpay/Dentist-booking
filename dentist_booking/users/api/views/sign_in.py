@@ -9,4 +9,4 @@ class SignInView(LoginView):
     template_name = 'users/signin.html'
 
     def get_success_url(self):
-        return reverse_lazy('booking')
+        return reverse_lazy('booking:index')
